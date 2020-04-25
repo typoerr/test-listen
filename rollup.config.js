@@ -20,13 +20,6 @@ export default {
       format: 'es',
       sourcemap: true,
     },
-    {
-      dir: 'dist',
-      // name: '',
-      entryFileNames: '[name].umd.js',
-      format: 'umd',
-      sourcemap: true,
-    },
   ],
   context: 'this',
   plugins: [
