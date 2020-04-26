@@ -17,9 +17,10 @@ function listen(src: http.Server | http.RequestListener, scope: TestScope): Prom
     return server.listen(async () => {
       const addr = server.address() as any
       try {
-        await scope.call(server, `http://localhost:${addr.port}`)
-      } finally {
-        server.close(resolve)
+        const end = await scope.call(server, `http://localhost:${addr.port}`)
+        server.close(() => resolve(end))
+      } catch (err) {
+        server.close(() => reject(err))
       }
     })
   })
