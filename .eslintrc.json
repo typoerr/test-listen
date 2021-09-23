@@ -1,6 +1,6 @@
 {
-  "extends": [
-    "@typoerr/eslint-config",
-    "@typoerr/eslint-config/+typescript"
-  ]
+  "extends": ["@typoerr/eslint-config", "@typoerr/eslint-config/+typescript", "@typoerr/eslint-config/+prettier"],
+  "env": {
+    "node": true
+  }
 }

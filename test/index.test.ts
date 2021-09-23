@@ -1,14 +1,14 @@
-import test from 'ava'
-import listen from '@/index'
 import http from 'http'
-import fetch from 'node-fetch'
+import test from 'ava'
 import express from 'express'
+import fetch from 'node-fetch'
+import listen from '../src/index'
 
 const listener = (req: http.IncomingMessage, res: http.ServerResponse) => {
   res.end(req.url)
 }
 
-test('listen from listener function', (t) => {
+test('listen from listener function', async (t) => {
   return listen(listener, async (url) => {
     const res = await fetch(url)
     t.is(res.status, 200)
@@ -23,7 +23,7 @@ test('listen http server', (t) => {
   })
 })
 
-test('express', (t) => {
+test('express', async (t) => {
   const server = express()
   server.use(listener)
   return listen(server, async (url) => {

@@ -1,15 +1,5 @@
 {
   "extends": "../tsconfig",
-  "compilerOptions": {
-    "module": "CommonJS",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "../src/*"
-      ]
-    }
-  },
-  "include": [
-    "./**/*.test.ts"
-  ]
+  "compilerOptions": {},
+  "include": ["./**/*.test.ts"]
 }

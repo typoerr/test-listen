@@ -7,4 +7,3 @@ Difference from `zeit/test-listen` is a closing server automatically on end of s
 ## Usage
 
 See `test/index.test.ts`
-
